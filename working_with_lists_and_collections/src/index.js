@@ -28,8 +28,12 @@ function ReservationsViewModel() {
     new SeatReservation("Bert", self.availableMeals[1])
   ]);
 
-  self.addSeat = function() {
+  self.addSeat = () => {
     self.seats.push(new SeatReservation("", self.availableMeals[0]));
+  };
+
+  self.removeSeat = seat => {
+    self.seats.remove(seat);
   };
 }
 

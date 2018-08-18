@@ -22,6 +22,7 @@
 		    <td><input data-bind="value: name" /></td>
 		    <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
         <td data-bind="text: formattedPrice" /></td>
+        <td><button data-bind="click: $root.removeSeat">remove</button></td>
 			</tr>
 		</tbody>
 	</table>
