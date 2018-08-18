@@ -1,21 +1,31 @@
 <html>
-    <head>
-        <title>Knockoutjs Tutorial</title>
-        <meta charset="UTF-8" />
-    </head>
 
-    <body>
-        <h2>Your seat reservations</h2>
+<head>
+	<title>Knockoutjs Tutorial</title>
+	<meta charset="UTF-8" />
+</head>
 
-        <table>
-            <thead><tr>
-                    <th>Passenger name</th><th>Meal</th><th>Surcharge</th><th></th>
-                </tr></thead>
-                <!-- Todo: Generate table body -->
-                <tbody></tbody>
-        </table>
-    </body>
+<body>
+	<h2>Your seat reservations</h2>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Passenger name</th>
+				<th>Meal</th>
+				<th>Surcharge</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody data-bind="foreach: seats">
+			<tr>
+				<td data-bind="text: name"></td>
+				<td data-bind="text: meal().mealName"></td>
+				<td data-bind="text: meal().price"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
 
 </html>
 <script src="src/index.js"></script>
-
