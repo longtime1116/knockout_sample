@@ -28,6 +28,14 @@ function ReservationsViewModel() {
     new SeatReservation("Bert", self.availableMeals[1])
   ]);
 
+  self.totalSurcharge = ko.computed(() => {
+    let total = 0;
+    for (var i = 0; i < self.seats().length; i++) {
+      total += self.seats()[i].meal().price;
+    }
+    return total.toFixed(2);
+  });
+
   self.addSeat = () => {
     self.seats.push(new SeatReservation("", self.availableMeals[0]));
   };
